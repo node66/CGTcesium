@@ -6,19 +6,20 @@
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title></title>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-10">
-            <div class="container-fluid">
+<div class="container-fluid h-100" id="mainContainer">
+    <div class="row h-100">
+        <div class="col-9 h-100">
+            <div class="h-100">
                 <div id="cesiumContainer"></div>
             </div>
         </div>
-        <div class="col">
-            <div class="mb-2">
-                <input class="form-control" id="formFileMultiple" multiple type="file"/>
-            </div>
+        <div class="col-3">
+            <!--            <div class="mb-2">-->
+            <!--                <input class="form-control" id="formFileMultiple" multiple type="file"/>-->
+            <!--            </div>-->
 
             <table class="table">
                 <thead>
@@ -33,7 +34,9 @@
                 <tr>
                     <th scope="row">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <label>
+                                <input class="form-check-input" type="checkbox" value="">
+                            </label>
                         </div>
                     </th>
                     <td>item1.geojson</td>
@@ -54,7 +57,9 @@
                 <tr>
                     <th scope="row">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <label>
+                                <input class="form-check-input" type="checkbox" value="">
+                            </label>
                         </div>
                     </th>
                     <td>item2.geojson</td>
@@ -75,7 +80,9 @@
                 <tr>
                     <th scope="row">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <label>
+                                <input class="form-check-input" type="checkbox" value="">
+                            </label>
                         </div>
                     </th>
                     <td>item3.geojson</td>
@@ -95,12 +102,20 @@
                 </tr>
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success ">Add item</button>
-            <button type="button" class="btn btn-danger ">Remove</button>
+            <div class="row">
+                <div class="col-5">
+                    <label class="custom-file-upload" for="file-upload">
+                        Add
+                    </label>
+                    <input accept=".geojson" id="file-upload" multiple type="file"/>
+                </div>
+                <div class="col-5">
+                    <button class="btn btn-danger" type="button">remove</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 
 <script src="../src/index.js"></script>
 <script src="../src/js/table.js"></script>
