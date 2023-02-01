@@ -1,0 +1,1865 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604125,
+          32.608296
+        ]
+      },
+      "properties": {
+        "Plus Time": "0",
+        "Altitude": "61,36904534",
+        "Downrange [Ra]": "0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604126,
+          32.608294
+        ]
+      },
+      "properties": {
+        "Plus Time": "1",
+        "Altitude": "65,45536165",
+        "Downrange [Ra]": "0,0001113419658"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604127,
+          32.608292
+        ]
+      },
+      "properties": {
+        "Plus Time": "2",
+        "Altitude": "78,53765752",
+        "Downrange [Ra]": "0,0002446224367"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604129,
+          32.608288
+        ]
+      },
+      "properties": {
+        "Plus Time": "3",
+        "Altitude": "102,2232587",
+        "Downrange [Ra]": "0,0005021868458"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604132,
+          32.608282
+        ]
+      },
+      "properties": {
+        "Plus Time": "4",
+        "Altitude": "137,2592904",
+        "Downrange [Ra]": "0,0009084894485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604136,
+          32.608273
+        ]
+      },
+      "properties": {
+        "Plus Time": "5",
+        "Altitude": "184,3276758",
+        "Downrange [Ra]": "0,001472236143"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604142,
+          32.608261
+        ]
+      },
+      "properties": {
+        "Plus Time": "6",
+        "Altitude": "244,0021741",
+        "Downrange [Ra]": "0,002250131851"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604149,
+          32.608246
+        ]
+      },
+      "properties": {
+        "Plus Time": "7",
+        "Altitude": "316,6175368",
+        "Downrange [Ra]": "0,003227675868"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604158,
+          32.608228
+        ]
+      },
+      "properties": {
+        "Plus Time": "8",
+        "Altitude": "402,4228338",
+        "Downrange [Ra]": "0,004414981993"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604168,
+          32.608206
+        ]
+      },
+      "properties": {
+        "Plus Time": "9",
+        "Altitude": "501,6547582",
+        "Downrange [Ra]": "0,005811972332"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.60418,
+          32.608182
+        ]
+      },
+      "properties": {
+        "Plus Time": "10",
+        "Altitude": "614,5431114",
+        "Downrange [Ra]": "0,007401837159"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604193,
+          32.608154
+        ]
+      },
+      "properties": {
+        "Plus Time": "11",
+        "Altitude": "741,3188223",
+        "Downrange [Ra]": "0,009191019028"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604207,
+          32.608124
+        ]
+      },
+      "properties": {
+        "Plus Time": "12",
+        "Altitude": "882,2157935",
+        "Downrange [Ra]": "0,01113484104"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604222,
+          32.608091
+        ]
+      },
+      "properties": {
+        "Plus Time": "13",
+        "Altitude": "1037,46804",
+        "Downrange [Ra]": "0,01327126219"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604237,
+          32.608055
+        ]
+      },
+      "properties": {
+        "Plus Time": "14",
+        "Altitude": "1207,308135",
+        "Downrange [Ra]": "0,01557534426"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604251,
+          32.608016
+        ]
+      },
+      "properties": {
+        "Plus Time": "15",
+        "Altitude": "1391,978871",
+        "Downrange [Ra]": "0,01800883065"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604263,
+          32.607974
+        ]
+      },
+      "properties": {
+        "Plus Time": "16",
+        "Altitude": "1591,728269",
+        "Downrange [Ra]": "0,02058895903"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.60427,
+          32.607928
+        ]
+      },
+      "properties": {
+        "Plus Time": "17",
+        "Altitude": "1806,803951",
+        "Downrange [Ra]": "0,02327739306"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604273,
+          32.60788
+        ]
+      },
+      "properties": {
+        "Plus Time": "18",
+        "Altitude": "2037,462899",
+        "Downrange [Ra]": "0,026075779"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604269,
+          32.607826
+        ]
+      },
+      "properties": {
+        "Plus Time": "19",
+        "Altitude": "2283,945574",
+        "Downrange [Ra]": "0,02909656574"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604258,
+          32.607768
+        ]
+      },
+      "properties": {
+        "Plus Time": "20",
+        "Altitude": "2546,45649",
+        "Downrange [Ra]": "0,03234733188"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604237,
+          32.607705
+        ]
+      },
+      "properties": {
+        "Plus Time": "21",
+        "Altitude": "2825,175853",
+        "Downrange [Ra]": "0,03583932064"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604208,
+          32.607633
+        ]
+      },
+      "properties": {
+        "Plus Time": "22",
+        "Altitude": "3120,255457",
+        "Downrange [Ra]": "0,03988022289"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604166,
+          32.607559
+        ]
+      },
+      "properties": {
+        "Plus Time": "23",
+        "Altitude": "3431,84751",
+        "Downrange [Ra]": "0,04416248329"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604112,
+          32.607475
+        ]
+      },
+      "properties": {
+        "Plus Time": "24",
+        "Altitude": "3760,121842",
+        "Downrange [Ra]": "0,04914963514"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.604044,
+          32.607384
+        ]
+      },
+      "properties": {
+        "Plus Time": "25",
+        "Altitude": "4105,263822",
+        "Downrange [Ra]": "0,05470811544"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.603964,
+          32.607282
+        ]
+      },
+      "properties": {
+        "Plus Time": "26",
+        "Altitude": "4467,469134",
+        "Downrange [Ra]": "0,06129563978"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.603871,
+          32.607163
+        ]
+      },
+      "properties": {
+        "Plus Time": "27",
+        "Altitude": "4846,923513",
+        "Downrange [Ra]": "0,06912835299"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.603754,
+          32.607032
+        ]
+      },
+      "properties": {
+        "Plus Time": "28",
+        "Altitude": "5243,824014",
+        "Downrange [Ra]": "0,0781091783"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.603621,
+          32.60689
+        ]
+      },
+      "properties": {
+        "Plus Time": "29",
+        "Altitude": "5658,372532",
+        "Downrange [Ra]": "0,08826089145"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.603468,
+          32.606739
+        ]
+      },
+      "properties": {
+        "Plus Time": "30",
+        "Altitude": "6090,773617",
+        "Downrange [Ra]": "0,09940239849"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.603299,
+          32.606572
+        ]
+      },
+      "properties": {
+        "Plus Time": "31",
+        "Altitude": "6541,236944",
+        "Downrange [Ra]": "0,1120272112"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.603108,
+          32.606394
+        ]
+      },
+      "properties": {
+        "Plus Time": "32",
+        "Altitude": "7009,976394",
+        "Downrange [Ra]": "0,1258530172"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.602905,
+          32.606185
+        ]
+      },
+      "properties": {
+        "Plus Time": "33",
+        "Altitude": "7497,203499",
+        "Downrange [Ra]": "0,1417962386"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.602677,
+          32.605968
+        ]
+      },
+      "properties": {
+        "Plus Time": "34",
+        "Altitude": "8003,129529",
+        "Downrange [Ra]": "0,1588897995"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.602426,
+          32.605738
+        ]
+      },
+      "properties": {
+        "Plus Time": "35",
+        "Altitude": "8527,966703",
+        "Downrange [Ra]": "0,1774586509"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.60215,
+          32.605493
+        ]
+      },
+      "properties": {
+        "Plus Time": "36",
+        "Altitude": "9071,931396",
+        "Downrange [Ra]": "0,1975496727"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.60185,
+          32.605227
+        ]
+      },
+      "properties": {
+        "Plus Time": "37",
+        "Altitude": "9635,235712",
+        "Downrange [Ra]": "0,2194517909"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.601522,
+          32.60495
+        ]
+      },
+      "properties": {
+        "Plus Time": "38",
+        "Altitude": "10218,08533",
+        "Downrange [Ra]": "0,2428962572"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.60117,
+          32.604647
+        ]
+      },
+      "properties": {
+        "Plus Time": "39",
+        "Altitude": "10820,68391",
+        "Downrange [Ra]": "0,2684305808"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.600791,
+          32.604319
+        ]
+      },
+      "properties": {
+        "Plus Time": "40",
+        "Altitude": "11443,23621",
+        "Downrange [Ra]": "0,2960327619"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.600376,
+          32.603984
+        ]
+      },
+      "properties": {
+        "Plus Time": "41",
+        "Altitude": "12085,93668",
+        "Downrange [Ra]": "0,3252567359"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.599923,
+          32.603641
+        ]
+      },
+      "properties": {
+        "Plus Time": "42",
+        "Altitude": "12748,95993",
+        "Downrange [Ra]": "0,3561638882"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.599448,
+          32.603255
+        ]
+      },
+      "properties": {
+        "Plus Time": "43",
+        "Altitude": "13432,46976",
+        "Downrange [Ra]": "0,3899052692"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.598941,
+          32.602841
+        ]
+      },
+      "properties": {
+        "Plus Time": "44",
+        "Altitude": "14136,62936",
+        "Downrange [Ra]": "0,4260625075"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.598396,
+          32.602407
+        ]
+      },
+      "properties": {
+        "Plus Time": "45",
+        "Altitude": "14861,59493",
+        "Downrange [Ra]": "0,4644563183"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.597808,
+          32.60196
+        ]
+      },
+      "properties": {
+        "Plus Time": "46",
+        "Altitude": "15607,51758",
+        "Downrange [Ra]": "0,5050320585"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.597186,
+          32.601477
+        ]
+      },
+      "properties": {
+        "Plus Time": "47",
+        "Altitude": "16374,54235",
+        "Downrange [Ra]": "0,5484847256"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.596521,
+          32.600967
+        ]
+      },
+      "properties": {
+        "Plus Time": "48",
+        "Altitude": "17162,31538",
+        "Downrange [Ra]": "0,594640456"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.595813,
+          32.60044
+        ]
+      },
+      "properties": {
+        "Plus Time": "49",
+        "Altitude": "17965,3874",
+        "Downrange [Ra]": "0,6432023278"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.595068,
+          32.599891
+        ]
+      },
+      "properties": {
+        "Plus Time": "50",
+        "Altitude": "18779,50907",
+        "Downrange [Ra]": "0,6941040728"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.594286,
+          32.59932
+        ]
+      },
+      "properties": {
+        "Plus Time": "51",
+        "Altitude": "19603,57515",
+        "Downrange [Ra]": "0,7473332998"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.59348,
+          32.598705
+        ]
+      },
+      "properties": {
+        "Plus Time": "52",
+        "Altitude": "20437,10887",
+        "Downrange [Ra]": "0,8034172011"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.592632,
+          32.598074
+        ]
+      },
+      "properties": {
+        "Plus Time": "53",
+        "Altitude": "21279,90296",
+        "Downrange [Ra]": "0,861775319"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.59174,
+          32.597426
+        ]
+      },
+      "properties": {
+        "Plus Time": "54",
+        "Altitude": "22131,84199",
+        "Downrange [Ra]": "0,9224688771"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.590803,
+          32.596763
+        ]
+      },
+      "properties": {
+        "Plus Time": "55",
+        "Altitude": "22992,83222",
+        "Downrange [Ra]": "0,9855678512"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.589818,
+          32.596085
+        ]
+      },
+      "properties": {
+        "Plus Time": "56",
+        "Altitude": "23863,29748",
+        "Downrange [Ra]": "1,051150755"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.588809,
+          32.595335
+        ]
+      },
+      "properties": {
+        "Plus Time": "57",
+        "Altitude": "24748,17025",
+        "Downrange [Ra]": "1,120656015"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.587707,
+          32.594618
+        ]
+      },
+      "properties": {
+        "Plus Time": "58",
+        "Altitude": "25650,90409",
+        "Downrange [Ra]": "1,19242538"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.586559,
+          32.593841
+        ]
+      },
+      "properties": {
+        "Plus Time": "59",
+        "Altitude": "26572,34114",
+        "Downrange [Ra]": "1,268420418"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.585357,
+          32.593012
+        ]
+      },
+      "properties": {
+        "Plus Time": "60",
+        "Altitude": "27513,62364",
+        "Downrange [Ra]": "1,348692552"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.584087,
+          32.592148
+        ]
+      },
+      "properties": {
+        "Plus Time": "61",
+        "Altitude": "28475,11918",
+        "Downrange [Ra]": "1,433089558"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.582745,
+          32.591249
+        ]
+      },
+      "properties": {
+        "Plus Time": "62",
+        "Altitude": "29456,75695",
+        "Downrange [Ra]": "1,521737811"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.581337,
+          32.590303
+        ]
+      },
+      "properties": {
+        "Plus Time": "63",
+        "Altitude": "30458,53304",
+        "Downrange [Ra]": "1,614920174"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.579859,
+          32.589308
+        ]
+      },
+      "properties": {
+        "Plus Time": "64",
+        "Altitude": "31480,42311",
+        "Downrange [Ra]": "1,71276889"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.578276,
+          32.588324
+        ]
+      },
+      "properties": {
+        "Plus Time": "65",
+        "Altitude": "32522,38331",
+        "Downrange [Ra]": "1,814442631"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.576612,
+          32.587305
+        ]
+      },
+      "properties": {
+        "Plus Time": "66",
+        "Altitude": "33584,36401",
+        "Downrange [Ra]": "1,920796113"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.57488,
+          32.586225
+        ]
+      },
+      "properties": {
+        "Plus Time": "67",
+        "Altitude": "34666,30394",
+        "Downrange [Ra]": "2,032286559"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.573057,
+          32.585121
+        ]
+      },
+      "properties": {
+        "Plus Time": "68",
+        "Altitude": "35768,16976",
+        "Downrange [Ra]": "2,148488193"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.571138,
+          32.583992
+        ]
+      },
+      "properties": {
+        "Plus Time": "69",
+        "Altitude": "36889,95022",
+        "Downrange [Ra]": "2,269524926"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.569139,
+          32.582812
+        ]
+      },
+      "properties": {
+        "Plus Time": "70",
+        "Altitude": "38031,63362",
+        "Downrange [Ra]": "2,395873293"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.567057,
+          32.58158
+        ]
+      },
+      "properties": {
+        "Plus Time": "71",
+        "Altitude": "39193,20899",
+        "Downrange [Ra]": "2,527668254"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.564891,
+          32.580293
+        ]
+      },
+      "properties": {
+        "Plus Time": "72",
+        "Altitude": "40374,66762",
+        "Downrange [Ra]": "2,665026344"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.56261,
+          32.578995
+        ]
+      },
+      "properties": {
+        "Plus Time": "73",
+        "Altitude": "41575,97512",
+        "Downrange [Ra]": "2,807585489"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.560222,
+          32.57767
+        ]
+      },
+      "properties": {
+        "Plus Time": "74",
+        "Altitude": "42797,08836",
+        "Downrange [Ra]": "2,955687619"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.55775,
+          32.576274
+        ]
+      },
+      "properties": {
+        "Plus Time": "75",
+        "Altitude": "44037,95826",
+        "Downrange [Ra]": "3,109966082"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.555174,
+          32.574835
+        ]
+      },
+      "properties": {
+        "Plus Time": "76",
+        "Altitude": "45298,52235",
+        "Downrange [Ra]": "3,270259276"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.552491,
+          32.573351
+        ]
+      },
+      "properties": {
+        "Plus Time": "77",
+        "Altitude": "46578,6879",
+        "Downrange [Ra]": "3,436722288"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.549699,
+          32.571821
+        ]
+      },
+      "properties": {
+        "Plus Time": "78",
+        "Altitude": "47878,33917",
+        "Downrange [Ra]": "3,609521014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.546785,
+          32.570259
+        ]
+      },
+      "properties": {
+        "Plus Time": "79",
+        "Altitude": "49197,35507",
+        "Downrange [Ra]": "3,788701381"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.543767,
+          32.568632
+        ]
+      },
+      "properties": {
+        "Plus Time": "80",
+        "Altitude": "50535,59603",
+        "Downrange [Ra]": "3,974706023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.540632,
+          32.566954
+        ]
+      },
+      "properties": {
+        "Plus Time": "81",
+        "Altitude": "51892,91548",
+        "Downrange [Ra]": "4,167554641"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.537367,
+          32.565239
+        ]
+      },
+      "properties": {
+        "Plus Time": "82",
+        "Altitude": "53269,1837",
+        "Downrange [Ra]": "4,367308116"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.533969,
+          32.563486
+        ]
+      },
+      "properties": {
+        "Plus Time": "83",
+        "Altitude": "54664,25961",
+        "Downrange [Ra]": "4,57414893"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.530459,
+          32.561661
+        ]
+      },
+      "properties": {
+        "Plus Time": "84",
+        "Altitude": "56078,00512",
+        "Downrange [Ra]": "4,788506116"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.526832,
+          32.559759
+        ]
+      },
+      "properties": {
+        "Plus Time": "85",
+        "Altitude": "57510,28919",
+        "Downrange [Ra]": "5,010557201"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.523089,
+          32.557777
+        ]
+      },
+      "properties": {
+        "Plus Time": "86",
+        "Altitude": "58960,97415",
+        "Downrange [Ra]": "5,240474929"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.519194,
+          32.555764
+        ]
+      },
+      "properties": {
+        "Plus Time": "87",
+        "Altitude": "60429,90434",
+        "Downrange [Ra]": "5,47810525"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.515167,
+          32.553683
+        ]
+      },
+      "properties": {
+        "Plus Time": "88",
+        "Altitude": "61916,91199",
+        "Downrange [Ra]": "5,72386278"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.511005,
+          32.551532
+        ]
+      },
+      "properties": {
+        "Plus Time": "89",
+        "Altitude": "63421,87269",
+        "Downrange [Ra]": "5,977927883"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.506728,
+          32.549274
+        ]
+      },
+      "properties": {
+        "Plus Time": "90",
+        "Altitude": "64944,80031",
+        "Downrange [Ra]": "6,240651992"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.50228,
+          32.546996
+        ]
+      },
+      "properties": {
+        "Plus Time": "91",
+        "Altitude": "66485,94386",
+        "Downrange [Ra]": "6,511616128"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.497704,
+          32.544627
+        ]
+      },
+      "properties": {
+        "Plus Time": "92",
+        "Altitude": "68045,74197",
+        "Downrange [Ra]": "6,791298401"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.493009,
+          32.54215
+        ]
+      },
+      "properties": {
+        "Plus Time": "93",
+        "Altitude": "69624,80489",
+        "Downrange [Ra]": "7,079821643"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.488173,
+          32.5396
+        ]
+      },
+      "properties": {
+        "Plus Time": "94",
+        "Altitude": "71223,82738",
+        "Downrange [Ra]": "7,377028514"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.48316,
+          32.537031
+        ]
+      },
+      "properties": {
+        "Plus Time": "95",
+        "Altitude": "72843,48864",
+        "Downrange [Ra]": "7,682684825"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.478026,
+          32.534353
+        ]
+      },
+      "properties": {
+        "Plus Time": "96",
+        "Altitude": "74484,38551",
+        "Downrange [Ra]": "7,997324069"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.472724,
+          32.531639
+        ]
+      },
+      "properties": {
+        "Plus Time": "97",
+        "Altitude": "76146,95796",
+        "Downrange [Ra]": "8,320610937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.467276,
+          32.528853
+        ]
+      },
+      "properties": {
+        "Plus Time": "98",
+        "Altitude": "77831,58236",
+        "Downrange [Ra]": "8,652776263"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.461693,
+          32.525974
+        ]
+      },
+      "properties": {
+        "Plus Time": "99",
+        "Altitude": "79538,71468",
+        "Downrange [Ra]": "8,99397055"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.455961,
+          32.523021
+        ]
+      },
+      "properties": {
+        "Plus Time": "100",
+        "Altitude": "81268,83738",
+        "Downrange [Ra]": "9,344183057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.450118,
+          32.519936
+        ]
+      },
+      "properties": {
+        "Plus Time": "101",
+        "Altitude": "83022,35849",
+        "Downrange [Ra]": "9,703740249"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.444074,
+          32.516853
+        ]
+      },
+      "properties": {
+        "Plus Time": "102",
+        "Altitude": "84799,63066",
+        "Downrange [Ra]": "10,07212977"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.437842,
+          32.513751
+        ]
+      },
+      "properties": {
+        "Plus Time": "103",
+        "Altitude": "86601,04501",
+        "Downrange [Ra]": "10,44954374"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.431505,
+          32.510496
+        ]
+      },
+      "properties": {
+        "Plus Time": "104",
+        "Altitude": "88426,95438",
+        "Downrange [Ra]": "10,83662905"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.425037,
+          32.507125
+        ]
+      },
+      "properties": {
+        "Plus Time": "105",
+        "Altitude": "90277,71542",
+        "Downrange [Ra]": "11,23331219"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.418413,
+          32.503675
+        ]
+      },
+      "properties": {
+        "Plus Time": "106",
+        "Altitude": "92153,72833",
+        "Downrange [Ra]": "11,63955097"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.411617,
+          32.500164
+        ]
+      },
+      "properties": {
+        "Plus Time": "107",
+        "Altitude": "94055,41227",
+        "Downrange [Ra]": "12,05539402"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.404635,
+          32.496613
+        ]
+      },
+      "properties": {
+        "Plus Time": "108",
+        "Altitude": "95983,18042",
+        "Downrange [Ra]": "12,48090056"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.397527,
+          32.49292
+        ]
+      },
+      "properties": {
+        "Plus Time": "109",
+        "Altitude": "97937,42326",
+        "Downrange [Ra]": "12,91657985"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.390227,
+          32.489186
+        ]
+      },
+      "properties": {
+        "Plus Time": "110",
+        "Altitude": "99918,52344",
+        "Downrange [Ra]": "13,36219066"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.382758,
+          32.48537
+        ]
+      },
+      "properties": {
+        "Plus Time": "111",
+        "Altitude": "101926,866",
+        "Downrange [Ra]": "13,81801555"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.375118,
+          32.481471
+        ]
+      },
+      "properties": {
+        "Plus Time": "112",
+        "Altitude": "103962,8448",
+        "Downrange [Ra]": "14,28418671"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.367291,
+          32.477508
+        ]
+      },
+      "properties": {
+        "Plus Time": "113",
+        "Altitude": "106026,8627",
+        "Downrange [Ra]": "14,76076381"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.359328,
+          32.473398
+        ]
+      },
+      "properties": {
+        "Plus Time": "114",
+        "Altitude": "108119,3499",
+        "Downrange [Ra]": "15,24816129"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.35116,
+          32.469245
+        ]
+      },
+      "properties": {
+        "Plus Time": "115",
+        "Altitude": "110240,7668",
+        "Downrange [Ra]": "15,74615729"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.342797,
+          32.465027
+        ]
+      },
+      "properties": {
+        "Plus Time": "116",
+        "Altitude": "112391,6105",
+        "Downrange [Ra]": "16,25495715"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.334279,
+          32.460679
+        ]
+      },
+      "properties": {
+        "Plus Time": "117",
+        "Altitude": "114572,4068",
+        "Downrange [Ra]": "16,77489562"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.325561,
+          32.456265
+        ]
+      },
+      "properties": {
+        "Plus Time": "118",
+        "Altitude": "116783,7166",
+        "Downrange [Ra]": "17,30589362"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.316656,
+          32.451763
+        ]
+      },
+      "properties": {
+        "Plus Time": "119",
+        "Altitude": "119026,1472",
+        "Downrange [Ra]": "17,84814868"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.307575,
+          32.44715
+        ]
+      },
+      "properties": {
+        "Plus Time": "120",
+        "Altitude": "121300,3434",
+        "Downrange [Ra]": "18,40185667"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.298274,
+          32.442491
+        ]
+      },
+      "properties": {
+        "Plus Time": "121",
+        "Altitude": "123606,929",
+        "Downrange [Ra]": "18,96694307"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.288792,
+          32.437719
+        ]
+      },
+      "properties": {
+        "Plus Time": "122",
+        "Altitude": "125946,4902",
+        "Downrange [Ra]": "19,54371747"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.27913,
+          32.432832
+        ]
+      },
+      "properties": {
+        "Plus Time": "123",
+        "Altitude": "128319,6057",
+        "Downrange [Ra]": "20,13228707"
+      }
+    }
+  ]
+}
