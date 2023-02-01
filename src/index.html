@@ -17,11 +17,7 @@
             </div>
         </div>
         <div class="col-3">
-            <!--            <div class="mb-2">-->
-            <!--                <input class="form-control" id="formFileMultiple" multiple type="file"/>-->
-            <!--            </div>-->
-
-            <table class="table">
+            <table class="table" id="table" aria-label="tableOfItems">
                 <thead>
                 <tr>
                     <th scope="col"></th>
@@ -31,83 +27,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">
-                        <div class="form-check">
-                            <label>
-                                <input class="form-check-input" type="checkbox" value="">
-                            </label>
-                        </div>
-                    </th>
-                    <td>item1.geojson</td>
-                    <td>
-                        <div class="card">
-                            <div class="card-body text-center d-flex justify-content-center align-items-center flex-column">
-                                <div class="mx-auto"></div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <svg class="bi bi-mask" fill="currentColor" height="16" viewBox="0 0 16 16"
-                             width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.225 1.227A7.5 7.5 0 0 1 10.5 8a7.5 7.5 0 0 1-4.275 6.773 7 7 0 1 0 0-13.546zM4.187.966a8 8 0 1 1 7.627 14.069A8 8 0 0 1 4.186.964z"/>
-                        </svg>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="form-check">
-                            <label>
-                                <input class="form-check-input" type="checkbox" value="">
-                            </label>
-                        </div>
-                    </th>
-                    <td>item2.geojson</td>
-                    <td>
-                        <div class="card">
-                            <div class="card-body text-center d-flex justify-content-center align-items-center flex-column">
-                                <div class="mx-auto"></div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <svg class="bi bi-mask" fill="currentColor" height="16" viewBox="0 0 16 16"
-                             width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.225 1.227A7.5 7.5 0 0 1 10.5 8a7.5 7.5 0 0 1-4.275 6.773 7 7 0 1 0 0-13.546zM4.187.966a8 8 0 1 1 7.627 14.069A8 8 0 0 1 4.186.964z"/>
-                        </svg>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="form-check">
-                            <label>
-                                <input class="form-check-input" type="checkbox" value="">
-                            </label>
-                        </div>
-                    </th>
-                    <td>item3.geojson</td>
-                    <td>
-                        <div class="card">
-                            <div class="card-body text-center d-flex justify-content-center align-items-center flex-column">
-                                <div class="mx-auto"></div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <svg class="bi bi-mask" fill="currentColor" height="16" viewBox="0 0 16 16"
-                             width="16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.225 1.227A7.5 7.5 0 0 1 10.5 8a7.5 7.5 0 0 1-4.275 6.773 7 7 0 1 0 0-13.546zM4.187.966a8 8 0 1 1 7.627 14.069A8 8 0 0 1 4.186.964z"/>
-                        </svg>
-                    </td>
-                </tr>
+
                 </tbody>
             </table>
             <div class="row">
                 <div class="col-5">
-                    <label class="custom-file-upload" for="file-upload">
+                    <label class="geojson-file-upload" for="geojson-file-upload">
                         Add
                     </label>
-                    <input accept=".geojson" id="file-upload" multiple type="file"/>
+                    <input accept=".geojson" id="geojson-file-upload" multiple type="file"/>
                 </div>
                 <div class="col-5">
                     <button class="btn btn-danger" type="button">remove</button>

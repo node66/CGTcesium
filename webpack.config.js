@@ -21,16 +21,16 @@ module.exports = {
         runtimeChunk: 'single'
     },
     resolve: {
-        fallback: { "https": false, "zlib": false, "http": false, "url": false },
+        fallback: {"https": false, "zlib": false, "http": false, "url": false},
         mainFiles: ['index', 'Cesium']
     },
     module: {
         rules: [{
             test: /\.css$/,
-            use: [ 'style-loader', 'css-loader' ]
+            use: ['style-loader', 'css-loader']
         }, {
             test: /\.(png|gif|jpg|jpeg|svg|xml|json)$/,
-            use: [ 'url-loader' ]
+            use: ['url-loader']
         }]
     },
     plugins: [
@@ -40,10 +40,10 @@ module.exports = {
         // Copy Cesium Assets, Widgets, and Workers to a static directory
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' },
-                { from: path.join(cesiumSource, 'Assets'), to: 'Assets' },
-                { from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' },
-		{ from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }
+                {from: path.join(cesiumSource, cesiumWorkers), to: 'Workers'},
+                {from: path.join(cesiumSource, 'Assets'), to: 'Assets'},
+                {from: path.join(cesiumSource, 'Widgets'), to: 'Widgets'},
+                {from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty'}
             ]
         }),
         new webpack.DefinePlugin({

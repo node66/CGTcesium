@@ -4,6 +4,7 @@ import { Viewer } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import "../src/css/main.css"
 import * as Cesium from "cesium";
+import {addRow} from "./js/table";
 
 export const viewer = new Viewer('cesiumContainer');
 const ellipsoid = viewer.scene.globe.ellipsoid;
@@ -12,7 +13,7 @@ const strToFloat = (str) => {
     return parseFloat(str.replace(",", "."));
 }
 
-const fileInput = document.getElementById("file-upload");
+const fileInput = document.getElementById("geojson-file-upload");
 fileInput.onchange = () => {
     const files = fileInput.files;
 
@@ -23,9 +24,10 @@ fileInput.onchange = () => {
         reader.onload = (e) => {
             Cesium.GeoJsonDataSource.load(JSON.parse(e.target.result))
                 .then(dataSource => {
+                    addRow(file.name);
                     viewer.dataSources.add(dataSource)
                         .then(r => r.entities.values.forEach(entity => {
-                            //entity.billboard = undefined
+                            entity.billboard = undefined
 
                             const downrange = strToFloat(String(entity.properties['Downrange [Ra]'])) * 100;
 
@@ -41,18 +43,9 @@ fileInput.onchange = () => {
                                 ellipsoid,
                             )
 
-                            let color
-                            if (downrange === 0) {
-                                color = new Cesium.Color(1, 1, 1)
-                            } else if (downrange < 0) {
-                                color = new Cesium.Color(0 - downrange * 10, 0, 1 + downrange)
-                            } else if (downrange > 0) {
-                                color = new Cesium.Color(downrange / 10, 0, 1 - (downrange / 10))
-                            }
-
                             entity.ellipsoid = new Cesium.EllipsoidGraphics({
-                                radii: new Cesium.Cartesian3(1500.0, 1500.0, 1500.0),
-                                material: color,
+                                radii: new Cesium.Cartesian3(150000.0, 150000.0, 150000.0),
+                                material: new Cesium.Color(1, 1, 1),
                                 slicePartitions: 24,
                                 stackPartitions: 36,
                             })
@@ -60,8 +53,7 @@ fileInput.onchange = () => {
                         .catch(error => {
                             alert(error)
                         })
-                })
-                .catch(error => {
+                }) .catch(error => {
                     alert(error);
                 })
         }
