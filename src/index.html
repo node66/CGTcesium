@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="col-3">
-            <table class="table" id="table" aria-label="tableOfItems">
+            <table aria-label="tableOfItems" class="table" id="table">
                 <thead>
                 <tr>
                     <th scope="col"></th>
@@ -27,7 +27,6 @@
                 </tr>
                 </thead>
                 <tbody>
-
                 </tbody>
             </table>
             <div class="row">
@@ -38,15 +37,13 @@
                     <input accept=".geojson" id="geojson-file-upload" multiple type="file"/>
                 </div>
                 <div class="col-5">
-                    <button class="btn btn-danger" type="button">remove</button>
+                    <button class="btn btn-danger" id="deleteItems" type="button">remove</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="../src/index.js"></script>
-<script src="../src/js/table.js"></script>
 <script crossorigin="anonymous"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
