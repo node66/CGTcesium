@@ -1,4 +1,6 @@
 import {viewer} from "../index";
+import * as Cesium from "cesium";
+
 
 const tableObject = document.getElementById("table")
 let id = 0
@@ -23,6 +25,20 @@ export function addRow(filename) {
         `<label for="colorInput${id}" class="form-label"></label>` +
         `<input type="color" class="form-control form-control-color" id="colorInput${id}" value="#FFFFFF">`
 
+    const colorInput = document.getElementById(`colorInput${id}`);
+    const dataName = nameCell.innerHTML;
+    colorInput.addEventListener("click", () => {
+        const data = viewer.dataSources.getByName(dataName)[0];
+        data.entities.values.forEach(entity => {
+            entity.ellipsoid.material = new Cesium.ColorMaterialProperty(
+                new Cesium.CallbackProperty(
+                    () => {
+                        return Cesium.Color.fromCssColorString(colorInput.value);
+                    }, false))
+        });
+    });
+
+
     const imgCell = newRow.insertCell();
     imgCell.innerHTML =
         "<label class=\"svg-file-upload\" for=\"file-upload\">\n" +
@@ -44,7 +60,7 @@ deleteItems.addEventListener("click", () => {
         if ('checkbox' === chkbox.type && true === chkbox.checked) {
             tableObject.deleteRow(i);
             const dataSources = viewer.dataSources;
-            dataSources.getByName(dataName).forEach( (data) => {
+            dataSources.getByName(dataName).forEach(data => {
                 dataSources.remove(data, true);
             });
             i--;

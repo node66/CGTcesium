@@ -4,7 +4,7 @@ import * as Cesium from "cesium";
 import {Viewer} from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import "../src/css/main.css"
-import {addRow, id} from "./js/table";
+import {addRow} from "./js/table";
 
 export const viewer = new Viewer('cesiumContainer');
 const ellipsoid = viewer.scene.globe.ellipsoid;
@@ -26,7 +26,8 @@ fileInput.onchange = () => {
             Cesium.GeoJsonDataSource.load(JSON.parse(e.target.result))
                 .then(dataSource => {
                     dataSource.name = file.name;
-                    if (viewer.dataSources.contains(dataSource))
+                    const data = viewer.dataSources.getByName(file.name)[0];
+                    if (viewer.dataSources.contains(data))
                         return;
 
                     addRow(file.name);
@@ -47,14 +48,14 @@ fileInput.onchange = () => {
                                     ellipsoid,
                                 )
 
-                                const colorCallback = new Cesium.CallbackProperty(
-                                    () => {
-                                            return Cesium.Color.fromRandom()
-                                    }, false);
+                                // const colorCallback = new Cesium.CallbackProperty(
+                                //     () => {
+                                //         return Cesium.Color.fromCssColorString({});
+                                //     }, false);
 
                                 entity.ellipsoid = new Cesium.EllipsoidGraphics({
                                     radii: new Cesium.Cartesian3(150000.0, 150000.0, 150000.0),
-                                    material: new Cesium.ColorMaterialProperty(colorCallback),
+                                    // material: new Cesium.ColorMaterialProperty(colorCallback),
                                     slicePartitions: 24,
                                     stackPartitions: 36,
                                 })
