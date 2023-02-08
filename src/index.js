@@ -6,6 +6,7 @@ import "cesium/Build/Cesium/Widgets/widgets.css";
 import "../src/css/main.css"
 import {addRow} from "./js/table";
 
+
 export const viewer = new Viewer('cesiumContainer');
 const ellipsoid = viewer.scene.globe.ellipsoid;
 
@@ -26,7 +27,7 @@ fileInput.onchange = () => {
             Cesium.GeoJsonDataSource.load(JSON.parse(e.target.result))
                 .then(dataSource => {
                     dataSource.name = file.name;
-                    const data = viewer.dataSources.getByName(file.name)[0];
+                    const [data] = viewer.dataSources.getByName(file.name);
                     if (viewer.dataSources.contains(data))
                         return;
 
@@ -34,11 +35,13 @@ fileInput.onchange = () => {
                     viewer.dataSources.add(dataSource)
                         .then(r => {
                             r.entities.values.forEach(entity => {
-                                entity.billboard = undefined
-
                                 const cartographic = Cesium.Cartographic.fromCartesian(
                                     entity.position.getValue(Cesium.JulianDate.now())
                                 )
+                                entity.billboard = undefined; //show only points
+                                entity.point = {
+                                    pixelSize: 10,
+                                }
 
                                 cartographic.height = strToFloat(String(entity.properties.Altitude));
                                 entity.position = Cesium.Cartesian3.fromDegrees(
@@ -47,19 +50,8 @@ fileInput.onchange = () => {
                                     cartographic.height * Cesium.Math.DEGREES_PER_RADIAN,
                                     ellipsoid,
                                 )
-
-                                // const colorCallback = new Cesium.CallbackProperty(
-                                //     () => {
-                                //         return Cesium.Color.fromCssColorString({});
-                                //     }, false);
-
-                                entity.ellipsoid = new Cesium.EllipsoidGraphics({
-                                    radii: new Cesium.Cartesian3(150000.0, 150000.0, 150000.0),
-                                    // material: new Cesium.ColorMaterialProperty(colorCallback),
-                                    slicePartitions: 24,
-                                    stackPartitions: 36,
-                                })
                             });
+                            viewer.zoomTo(r)
                         })
                         .catch(error => {
                             alert(error)

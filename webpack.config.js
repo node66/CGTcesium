@@ -10,7 +10,8 @@ module.exports = {
     context: __dirname,
     entry: {
         app: '/src/index.js',
-        table: '/src/js/table.js'
+        table: '/src/js/table.js',
+        modal: '/src/js/modal.js',
     },
     output: {
         filename: '[name]_bundle.js',
