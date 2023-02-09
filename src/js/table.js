@@ -19,27 +19,36 @@ export function addRow(filename) {
     const nameCell = newRow.insertCell();
     nameCell.innerHTML = filename
 
+    const sizeCell = newRow.insertCell();
+    sizeCell.innerHTML =
+            `<input id="sizeInput${id}" type="number" min="0" required value="10">`
+
+
+    const sizeInp = document.getElementById(`sizeInput${id}`);
+    sizeInp.onchange = sizeAndColorChange;
+
 
     const colorCell = newRow.insertCell();
     colorCell.innerHTML =
         `<label for="colorInput${id}" class="form-label"></label>` +
         `<input type="color" class="form-control form-control-color" id="colorInput${id}" value="#FFFFFF">`
 
-    const colorInput = document.getElementById(`colorInput${id}`);
-    const dataName = nameCell.innerHTML;
-    colorInput.addEventListener("click", () => {
-        const [data] = viewer.dataSources.getByName(dataName);
+    const colorInp = document.getElementById(`colorInput${id}`);
+    colorInp.onclick = sizeAndColorChange;
+
+    function sizeAndColorChange() {
+        const [data] = viewer.dataSources.getByName(nameCell.innerHTML);
         data.entities.values.forEach(entity => {
             entity.point = {
-                pixelSize: 10,
+                pixelSize: sizeInp.value,
                 color: new Cesium.CallbackProperty(
                     () => {
                         return Cesium.Color.fromCssColorString(
-                            colorInput.value);
-                    }, false)
+                            colorInp.value);
+                    }, false),
             }
         })
-    });
+    }
 
 
     const imgCell = newRow.insertCell();
@@ -75,8 +84,6 @@ export function addRow(filename) {
 
 
     const param = newRow.insertCell();
-    param.innerHTML =
-        "<button type=\"button\" id=\"paramButton\" class=\"btn btn-primary\"> ... </button>"
 
     id++
 }
