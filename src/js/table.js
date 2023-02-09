@@ -13,7 +13,7 @@ export function addRow(filename) {
 
     const checkboxCell = newRow.insertCell();
     checkboxCell.innerHTML =
-        "<input class=\"form-check-input\" type=\"checkbox\" value=\"\">\n"
+        "<input class=\"form-check-input\" name=\"checkbox\" type=\"checkbox\" value=\"\">\n"
 
 
     const nameCell = newRow.insertCell();
@@ -21,11 +21,11 @@ export function addRow(filename) {
 
     const sizeCell = newRow.insertCell();
     sizeCell.innerHTML =
-            `<input id="sizeInput${id}" type="number" min="0" required value="10">`
+        `<input id="sizeInput${id}" type="number" min="0" required value="10">`
 
 
     const sizeInp = document.getElementById(`sizeInput${id}`);
-    sizeInp.onchange = sizeAndColorChange;
+    sizeInp.onchange = sizeInp.onclick = sizeAndColorChange;
 
 
     const colorCell = newRow.insertCell();
@@ -40,12 +40,17 @@ export function addRow(filename) {
         const [data] = viewer.dataSources.getByName(nameCell.innerHTML);
         data.entities.values.forEach(entity => {
             entity.point = {
-                pixelSize: sizeInp.value,
+                pixelSize: new Cesium.CallbackProperty(
+                    () => {
+                        return sizeInp.value;
+                    }, false
+                ),
                 color: new Cesium.CallbackProperty(
                     () => {
                         return Cesium.Color.fromCssColorString(
                             colorInp.value);
-                    }, false),
+                    }, false
+                ),
             }
         })
     }
@@ -53,14 +58,13 @@ export function addRow(filename) {
 
     const imgCell = newRow.insertCell();
     imgCell.innerHTML =
-        "<label for=\"pngFile\" class=\"form-label\">" +
-        "  <canvas id=\"canvas\" width=\"50\" height=\"30\" style=\"border:1px solid #000000;\">\n" +
-        "</canvas> " +
-        "<input class=\"form-control\" accept=\".png\" type=\"file\" id=\"pngFile\" >"
+        `<label for="pngFile${id}" class="form-label">
+         <canvas id="canvas${id}" width="32" height="32" style="border:1px solid #000000;">
+         </canvas><input class="form-control" accept=".png" type="file" id="pngFile${id}" >`
 
-    const imgInp = document.getElementById("pngFile");
-    const canvas = document.getElementById("canvas"),
-        context = canvas.getContext('2d');
+    const imgInp = document.getElementById(`pngFile${id}`);
+    const canvas = document.getElementById(`canvas${id}`),
+          context = canvas.getContext('2d');
 
     let path;
     imgInp.onchange = () => {
@@ -69,7 +73,9 @@ export function addRow(filename) {
         const img = new Image();
         if (file) {
             img.onload = () => {
-                context.drawImage(img, 50, 30);
+                img.style.width = 32;
+                img.style.height = 32;
+                context.drawImage(img, 0, 0);
             };
             img.src = path;
             const [data] = viewer.dataSources.getByName(nameCell.innerHTML);
