@@ -7,7 +7,6 @@ html, body, #cesiumContainer {
 
 #mainContainer{
 	padding: 0;
-	overflow: hidden;
 }
 
 input[type="file"] {

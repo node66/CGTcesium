@@ -13,7 +13,31 @@ export function addRow(filename) {
 
     const checkboxCell = newRow.insertCell();
     checkboxCell.innerHTML =
-        "<input class=\"form-check-input\" name=\"checkbox\" type=\"checkbox\" value=\"\">\n"
+        `<input checked class="form-check-input" id="check${id}" name="checkbox" type="checkbox" value="">`
+
+
+    const mainCheck = document.getElementById("mainСheckbox")
+    mainCheck.disabled = false;
+    mainCheck.checked = true;
+    mainCheck.addEventListener("change",
+        () => {
+            const rowCount = tableObject.rows.length;
+            for (let i = 1; i < rowCount; ++i) {
+                const row = tableObject.rows[i];
+                const [chkbox] = row.cells[0].getElementsByTagName('input');
+                chkbox.checked = mainCheck.checked
+            }
+        }
+    )
+
+    const checkBox = document.getElementById(`check${id}`)
+    checkBox.addEventListener("click",
+        () => {
+            const [data] = viewer.dataSources.getByName(filename);
+            const checked = checkBox.checked
+            data.show = checked
+            viewer.entities.getById(filename).polyline.show = checked
+        })
 
 
     const nameCell = newRow.insertCell();
@@ -64,7 +88,7 @@ export function addRow(filename) {
 
     const imgInp = document.getElementById(`pngFile${id}`);
     const canvas = document.getElementById(`canvas${id}`),
-          context = canvas.getContext('2d');
+        context = canvas.getContext('2d');
 
     let path;
     imgInp.onchange = () => {
@@ -89,11 +113,41 @@ export function addRow(filename) {
     }
 
 
-    const param = newRow.insertCell();
+    const poly = newRow.insertCell();
+    poly.innerHTML =
+        `<input class="form-check-input" id="connectPoints${id}" type="checkbox" value="">`
+
+    const polyCheck = document.getElementById(`connectPoints${id}`)
+    polyCheck.addEventListener("change",
+        () => {
+            let cartesians = []
+            const [data] = viewer.dataSources.getByName(nameCell.innerHTML);
+            data.entities.values.forEach(entity => {
+                cartesians.push(entity.position.getValue(Cesium.JulianDate.now()))
+            })
+            if (polyCheck.checked === true) {
+                viewer.entities.add({
+                    id: nameCell.innerHTML,
+                    polyline: {
+                        positions: cartesians,
+                        arcType: Cesium.ArcType.NONE,
+                        width: 2,
+                        material: new Cesium.PolylineOutlineMaterialProperty({
+                            color: Cesium.Color.YELLOW,
+                        }),
+                        depthFailMaterial: new Cesium.PolylineOutlineMaterialProperty(
+                            {
+                                color: Cesium.Color.YELLOW,
+                            })
+                    }
+                })
+            } else
+                viewer.entities.removeById(nameCell.innerHTML)
+        }
+    )
 
     id++
 }
-
 
 const deleteItems = document.getElementById("deleteItems")
 deleteItems.addEventListener("click", () => {

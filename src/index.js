@@ -8,7 +8,9 @@ import {addRow} from "./js/table";
 
 
 export const viewer = new Viewer('cesiumContainer');
-const ellipsoid = viewer.scene.globe.ellipsoid;
+export const scene = viewer.scene;
+
+const ellipsoid = scene.globe.ellipsoid;
 
 const strToFloat = (str) => {
     return parseFloat(str.replace(",", "."));
