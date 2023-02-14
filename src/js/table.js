@@ -16,6 +16,20 @@ export function addRow(filename) {
         `<input checked class="form-check-input" id="check${id}" name="checkbox" type="checkbox" value="">`
 
 
+    const checkBox = document.getElementById(`check${id}`)
+    checkBox.addEventListener("change",
+        () => {
+            const [data] = viewer.dataSources.getByName(filename);
+            const checked = checkBox.checked
+            data.show = checked
+            const polyline = viewer.entities.getById(filename)?.polyline
+            if (polyline !== undefined)
+                if (checked) {
+                    polyline.show = !!polyCheck.checked;
+                } else
+                    polyline.show = false
+        })
+
     const mainCheck = document.getElementById("mainСheckbox")
     mainCheck.disabled = false;
     mainCheck.checked = true;
@@ -29,15 +43,6 @@ export function addRow(filename) {
             }
         }
     )
-
-    const checkBox = document.getElementById(`check${id}`)
-    checkBox.addEventListener("click",
-        () => {
-            const [data] = viewer.dataSources.getByName(filename);
-            const checked = checkBox.checked
-            data.show = checked
-            viewer.entities.getById(filename).polyline.show = checked
-        })
 
 
     const nameCell = newRow.insertCell();
@@ -115,17 +120,20 @@ export function addRow(filename) {
 
     const poly = newRow.insertCell();
     poly.innerHTML =
-        `<input class="form-check-input" id="connectPoints${id}" type="checkbox" value="">`
+        `<input  class="form-check-input" id="connectPoints${id}" type="checkbox" value="">`
 
     const polyCheck = document.getElementById(`connectPoints${id}`)
+
+
     polyCheck.addEventListener("change",
         () => {
             let cartesians = []
             const [data] = viewer.dataSources.getByName(nameCell.innerHTML);
             data.entities.values.forEach(entity => {
                 cartesians.push(entity.position.getValue(Cesium.JulianDate.now()))
-            })
-            if (polyCheck.checked === true) {
+            });
+            const polyline = viewer.entities.getById(nameCell.innerHTML)?.polyline
+            if (polyline === undefined)
                 viewer.entities.add({
                     id: nameCell.innerHTML,
                     polyline: {
@@ -133,18 +141,19 @@ export function addRow(filename) {
                         arcType: Cesium.ArcType.NONE,
                         width: 2,
                         material: new Cesium.PolylineOutlineMaterialProperty({
-                            color: Cesium.Color.YELLOW,
+                            color: new Cesium.CallbackProperty(
+                                () => {
+                                    return Cesium.Color.fromCssColorString(
+                                        colorInp.value);
+                                }, false
+                            ),
                         }),
-                        depthFailMaterial: new Cesium.PolylineOutlineMaterialProperty(
-                            {
-                                color: Cesium.Color.YELLOW,
-                            })
                     }
                 })
-            } else
-                viewer.entities.removeById(nameCell.innerHTML)
-        }
-    )
+            else
+                polyline.show = !!(polyCheck.checked && checkBox.checked);
+        })
+
 
     id++
 }
