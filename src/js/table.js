@@ -36,8 +36,11 @@ export function addRow(filename) {
             <label for="colorInput${id}" class="form-label">Item Color</label>
       </li>
       <li class="list-group-item">
-           <canvas id="canvas${id}" width="32" height="32" style="border:1px solid #000000"></canvas>
-           <label for="pngFile${id}" class="form-label">Texture Image </label>
+           <label for="pngFile${id}" class="form-label">
+            <canvas id="canvas${id}" width="32" height="32" style="border:1px solid #000000">
+            </canvas><input class="form-control" accept=".png" type="file" id="pngFile${id}">
+                Texture Image
+           </label>
            <input class="form-control" accept=".png" type="file" id="pngFile${id}">
       </li>
       <li class="list-group-item">
@@ -51,19 +54,19 @@ export function addRow(filename) {
                  <label for="">3D buffer size</label>
                         <div class="form-check">
                             <input  class="form-check-input" type="radio" name="flexRadioDefault" id="sizeBuff1" checked>
-                            <label class="form-check-label" for="flexRadioDefault1">
+                            <label class="form-check-label" for="sizeBuff1">
                                 3nm
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="sizeBuff2">
-                            <label class="form-check-label" for="flexRadioDefault2">
+                            <label class="form-check-label" for="sizeBuff2">
                                 5nm
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="sizeBuff3">
-                            <label class="form-check-label" for="flexRadioDefault2">
+                            <label class="form-check-label" for="sizeBuff3">
                                 10nm
                             </label>
                         </div>
