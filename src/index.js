@@ -15,6 +15,7 @@ const strToFloat = (str) => {
   return parseFloat(str.replace(',', '.'));
 };
 
+
 const fileInput = document.getElementById('geojson-file-upload');
 fileInput.onchange = () => {
   const files = fileInput.files;
@@ -49,8 +50,9 @@ fileInput.onchange = () => {
                     ellipsoid);
 
                 entity.ellipsoid = {
-                  radii: new Cesium.Cartesian3(150000.0, 150000.0, 150000.0),
-                  material: Cesium.Color.RED.withAlpha(0.0),
+                  radii: new Cesium.Cartesian3(5556.0, 5556.0, 5556.0),
+                  material: Cesium.Color.RED.withAlpha(0.5),
+                  show: false,
                 };
 
               });
