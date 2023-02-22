@@ -12,24 +12,25 @@ export function addRow(filename) {
   div.innerHTML =
       `<div class="card" id="card${id}">
             <div class="card-header">
-                <input className="form-check-input me-1" checked type="checkbox" id="check${id}" value="">
+                <input checked type="checkbox" id="check${id}" value="">
                 <label for="check${id}">${filename}</label>
             </div>
                 <ul id="list${id}" class="list-group list-group-flush">
                 </ul>
        </div>`;
 
-  headerCart.insertBefore(div, document.getElementById('first'));
+  // headerCart.insertBefore(div, document.getElementById('first'));
+  headerCart.prepend(div);
 
   const bodyCard = document.getElementById(`list${id}`);
   bodyCard.innerHTML =
       `<li class="list-group-item">
             <input id="sizeInput${id}" type="number" min="0" required value="10">
-            <label for="connectPoints${id}">Connect Points</label>
+            <label for="size${id}">Size</label>
       </li>
       <li class="list-group-item">
             <input  class="form-check-input" id="connectPoints${id}" type="checkbox" value="">
-            Connect Points
+            <label for="connectPoints${id}">Connect Points</label>
       </li>
       <li class="list-group-item">
             <input type="color" class="form-control form-control-color" id="colorInput${id}" value="#FFFFFF">
@@ -47,7 +48,7 @@ export function addRow(filename) {
             <div class="card">
                 <ul id="innerList${id}" class="list-group list-group-flush">
                 <li class="list-group-item">
-                        <input className="form-check-input me-1" id="bufferCheck${id}" type="checkbox" value="">
+                        <input  id="bufferCheck${id}" type="checkbox" value="">
                         <label for="">3D buffer</label>
                 </li>
                  <li class="list-group-item">
@@ -165,7 +166,7 @@ export function addRow(filename) {
             id: filename,
             polyline: {
               positions: cartesians,
-              arcType: Cesium.ArcType.NONE,
+              // arcType: Cesium.ArcType.NONE,
               width: 2,
               material: new Cesium.PolylineOutlineMaterialProperty({
                 color: new Cesium.CallbackProperty(
@@ -177,8 +178,18 @@ export function addRow(filename) {
               }),
             },
           });
-        else
+        else {
           polyline.show = !!(polyCheck.checked && checkBox.checked);
+        }
+        viewer.entities.add({
+          name: 'Red tube with rounded corners',
+          polylineVolume: {
+            positions: cartesians,
+            shape: computeCircle(60000.0),
+            material: Cesium.Color.RED,
+            granularity: 0.001,
+          },
+        });
       });
 
   const checkBuffBox = document.getElementById(`bufferCheck${id}`);
@@ -236,5 +247,25 @@ export function addRow(filename) {
 
 const deleteItems = document.getElementById('deleteItems');
 deleteItems.onclick = () => {
-
+  const cards = document.getElementsByClassName('card');
+  for (let card of cards) {
+    const checkboxes = card.getElementsByTagName('input');
+    for (let checkbox of checkboxes) {
+        card.remove();
+    }
+  }
 };
+
+function computeCircle(radius) {
+  const positions = [];
+  for (let i = 0; i < 360; i++) {
+    const radians = Cesium.Math.toRadians(i);
+    positions.push(
+        new Cesium.Cartesian2(
+            radius * Math.cos(radians) + 1,
+            radius * Math.sin(radians) + 1,
+        ),
+    );
+  }
+  return positions;
+}
