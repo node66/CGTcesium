@@ -33,21 +33,21 @@ fileInput.onchange = () => {
             addRow(file.name);
             viewer.dataSources.add(dataSource).then(r => {
               r.entities.values.forEach(entity => {
-                const cartographic = Cesium.Cartographic.fromCartesian(
-                    entity.position.getValue(Cesium.JulianDate.now()));
                 entity.billboard = undefined; //show only points
                 entity.point = {
                   pixelSize: 10,
                 };
 
+                const cartographic = Cesium.Cartographic.fromCartesian(entity.position.getValue(Cesium.JulianDate.now()));
                 cartographic.height = strToFloat(
                     String(entity.properties.Altitude));
-                entity.position = Cesium.Cartesian3.fromDegrees(
-                    cartographic.longitude * Cesium.Math.DEGREES_PER_RADIAN,
-                    cartographic.latitude * Cesium.Math.DEGREES_PER_RADIAN,
-                    cartographic.height * Cesium.Math.DEGREES_PER_RADIAN,
-                    ellipsoid);
 
+                const entityPositionCartographic = new Cesium.Cartographic(
+                    cartographic.longitude,
+                    cartographic.latitude,
+                    cartographic.height);
+                entity.position = Cesium.Ellipsoid.WGS84.cartographicToCartesian(
+                    entityPositionCartographic);
               });
               viewer.zoomTo(r).catch(error => alert(error));
             }).catch(error => alert(error));
