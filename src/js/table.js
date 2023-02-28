@@ -160,13 +160,14 @@ export function addRow(filename) {
         data.entities.values.forEach(entity => {
           cartesians.push(entity.position.getValue(Cesium.JulianDate.now()));
         });
+
         const polyline = viewer.entities.getById(filename)?.polyline;
         if (polyline === undefined)
           viewer.entities.add({
             id: filename,
             polyline: {
               positions: cartesians,
-              // arcType: Cesium.ArcType.NONE,
+              arcType: Cesium.ArcType.NONE,
               width: 2,
               material: new Cesium.PolylineOutlineMaterialProperty({
                 color: new Cesium.CallbackProperty(
@@ -181,25 +182,29 @@ export function addRow(filename) {
         else {
           polyline.show = !!(polyCheck.checked && checkBox.checked);
         }
-        viewer.entities.add({
-          name: 'Red tube with rounded corners',
-          polylineVolume: {
-            positions: cartesians,
-            shape: computeCircle(60000.0),
-            material: Cesium.Color.RED,
-            granularity: 0.001,
-          },
-        });
       });
 
   const checkBuffBox = document.getElementById(`bufferCheck${id}`);
   checkBuffBox.onchange =
       () => {
         const [data] = viewer.dataSources.getByName(filename);
-        const checked = checkBuffBox.checked;
-        data.entities.values.forEach(entity => {
-          entity.ellipsoid.show = checked;
-        });
+
+        for (let i = 0; i < data.entities.values.length; i++) {
+          if (i === 0 || i === data.entities.values.length - 1 || i % 10 === 0.0) {
+            const cartographic = Cesium.Cartographic.fromCartesian(
+                data.entities.values[i].position.getValue(
+                    Cesium.JulianDate.now()));
+            viewer.entities.add({
+              position: data.entities.values[i].position,
+              ellipse: {
+                semiMinorAxis: 2500,
+                semiMajorAxis: 2500,
+                height: cartographic.height,
+                material: Cesium.Color.BLUE.withAlpha(0.5),
+              },
+            });
+          }
+        }
       };
 
   const colorBuffInp = document.getElementById(`colorBuffInput${id}`);
@@ -251,7 +256,7 @@ deleteItems.onclick = () => {
   for (let card of cards) {
     const checkboxes = card.getElementsByTagName('input');
     for (let checkbox of checkboxes) {
-        card.remove();
+      card.remove();
     }
   }
 };
@@ -262,8 +267,8 @@ function computeCircle(radius) {
     const radians = Cesium.Math.toRadians(i);
     positions.push(
         new Cesium.Cartesian2(
-            radius * Math.cos(radians) + 1,
-            radius * Math.sin(radians) + 1,
+            radius * Math.cos(radians),
+            radius * Math.sin(radians),
         ),
     );
   }
