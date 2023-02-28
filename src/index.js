@@ -38,7 +38,8 @@ fileInput.onchange = () => {
                   pixelSize: 10,
                 };
 
-                const cartographic = Cesium.Cartographic.fromCartesian(entity.position.getValue(Cesium.JulianDate.now()));
+                const cartographic = Cesium.Cartographic.fromCartesian(
+                    entity.position.getValue(Cesium.JulianDate.now()));
                 cartographic.height = strToFloat(
                     String(entity.properties.Altitude));
 
@@ -48,6 +49,7 @@ fileInput.onchange = () => {
                     cartographic.height);
                 entity.position = Cesium.Ellipsoid.WGS84.cartographicToCartesian(
                     entityPositionCartographic);
+
               });
               viewer.zoomTo(r).catch(error => alert(error));
             }).catch(error => alert(error));
