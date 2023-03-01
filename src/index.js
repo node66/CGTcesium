@@ -1,5 +1,4 @@
 import 'bootstrap';
-
 import * as Cesium from 'cesium';
 import {Viewer} from 'cesium';
 import 'cesium/Build/Cesium/Widgets/widgets.css';
@@ -9,7 +8,6 @@ import {addRow} from './js/table';
 export const viewer = new Viewer('cesiumContainer');
 export const scene = viewer.scene;
 
-const ellipsoid = scene.globe.ellipsoid;
 
 const strToFloat = (str) => {
   return parseFloat(str.replace(',', '.'));

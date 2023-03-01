@@ -9,6 +9,7 @@ export {
 export function addRow(filename) {
   const headerCart = document.getElementById('sideBar');
   const div = document.createElement('div');
+  div.id = `div-${id}`;
   div.innerHTML = `<div class="card" id="card${id}">
             <div class="card-header">
                 <input checked type="checkbox" id="check${id}" value="">
@@ -21,7 +22,7 @@ export function addRow(filename) {
   headerCart.prepend(div);
 
   const bodyCard = document.getElementById(`list${id}`);
-  // language=HTML format=false
+
   bodyCard.innerHTML = `
       <li class="list-group-item">
           <input id="sizeInput${id}" type="number" min="0" required value="10">
@@ -150,6 +151,11 @@ export function addRow(filename) {
     if (polyline !== undefined) if (checked) {
       polyline.show = !!polyCheck.checked;
     } else polyline.show = false;
+    for (const dataSource of buffersData) {
+      dataSource.entities.values.forEach(entity => {
+        entity.show = checkBuffBox.checked && checked;
+      })
+    }
   });
 
   const imgInp = document.getElementById(`pngFile${id}`);
@@ -206,80 +212,96 @@ export function addRow(filename) {
     }
   });
 
-  const BufferSize = {
-    nm3: 5556,
-    nm5: 9260,
-    nm10: 18520,
-  };
+  const BufferSize = [
+    5556, //nm3
+    9260, //nm5
+    18520, //nm10
+  ];
+
+  const bufferNames = [
+    'firstBufferData' + id,
+    'secondBufferData' + id,
+    'thirdBufferData' + id,
+  ];
+
+  const buffersData = [];
+  for (let i = 0; i < bufferNames.length; ++i)
+    buffersData[i] = new Cesium.CustomDataSource(bufferNames[i]);
 
   const checkBuffBox = document.getElementById(`bufferCheck${id}`);
   checkBuffBox.onchange = () => {
     const [data] = viewer.dataSources.getByName(filename);
-    for (let i = 0; i < data.entities.values.length; i++) {
 
-      if (i === 0 || i === data.entities.values.length - 1 || i % 10 === 0) {
-        const cartographic = Cesium.Cartographic.fromCartesian(
-            data.entities.values[i].position.getValue(Cesium.JulianDate.now()));
+    const firstBuff = viewer.dataSources.getByName(bufferNames.at(0))
+    const secondBuff = viewer.dataSources.getByName(bufferNames.at(1))
+    const thirdBuff = viewer.dataSources.getByName(bufferNames.at(2))
 
-        viewer.entities.add({
-          position: data.entities.values[i].position,
-          ellipse: {
-            semiMinorAxis: BufferSize.nm3,
-            semiMajorAxis: BufferSize.nm3,
-            height: cartographic.height,
-            material: new Cesium.ColorMaterialProperty(
-                new Cesium.CallbackProperty(() => {
-                  return Cesium.Color.fromCssColorString(colorBuffInp1.value).
-                      withAlpha(Number(transparencyBuffInp1.value));
-                }, false)),
-            show: checkBuffBox1.value,
-          },
-        });
+    if (firstBuff.length === 0 &&
+        secondBuff.length === 0 &&
+        thirdBuff.length === 0 &&
+        checkBuffBox.checked)
+    {
+      for (let i = 0; i < data.entities.values.length; i++) {
 
-        viewer.entities.add({
-          position: data.entities.values[i].position,
-          ellipse: {
-            semiMinorAxis: BufferSize.nm5,
-            semiMajorAxis: BufferSize.nm5,
-            height: cartographic.height,
-            material: new Cesium.ColorMaterialProperty(
-                new Cesium.CallbackProperty(() => {
-                  return Cesium.Color.fromCssColorString(colorBuffInp2.value).
-                      withAlpha(Number(transparencyBuffInp2.value));
-                }, false)),
-          },
-        });
-        viewer.entities.add({
-          position: data.entities.values[i].position,
-          ellipse: {
-            semiMinorAxis: BufferSize.nm10,
-            semiMajorAxis: BufferSize.nm10,
-            height: cartographic.height,
-            material: new Cesium.ColorMaterialProperty(
-                new Cesium.CallbackProperty(() => {
-                  return Cesium.Color.fromCssColorString(colorBuffInp3.value).
-                      withAlpha(Number(transparencyBuffInp3.value));
-                }, false)),
-          },
-        });
+        if (i === 0 || i === data.entities.values.length - 1 || i % 10 === 0) {
+          const cartographic = Cesium.Cartographic.fromCartesian(
+              data.entities.values[i].position.getValue(
+                  Cesium.JulianDate.now()));
+
+          for (let index = 0; index < buffersData.length; ++index) {
+            buffersData[index].entities.add({
+              position: data.entities.values[i].position,
+              ellipse: {
+                semiMinorAxis: BufferSize[index],
+                semiMajorAxis: BufferSize[index],
+                height: cartographic.height,
+                material: new Cesium.ColorMaterialProperty(
+                    new Cesium.CallbackProperty(() => {
+                      return Cesium.Color.fromCssColorString(
+                          colorBuffInps[index].value).withAlpha(Number(transparencyBuffInps[index].value));
+                    }, false)),
+              },
+            });
+          }
+        }
       }
-
+      for (const dataSource of buffersData) {
+        viewer.dataSources.add(dataSource).catch(error => alert(error));
+      }
+    } else {
+      for (const dataSource of buffersData) {
+        dataSource.entities.values.forEach(entity => {
+          entity.show = checkBuffBox.checked;
+        })
+      }
     }
   };
 
-  const checkBuffBox1 = document.getElementById(`checkBuff1Box-${id}`);
-  const colorBuffInp1 = document.getElementById(`colorBuffInput1-${id}`);
-  const transparencyBuffInp1 = document.getElementById(
-      `transparencyBuffInput1-${id}`);
+  const checkBuffBoxes = [
+    document.getElementById(`checkBuff1Box-${id}`),
+    document.getElementById(`checkBuff2Box-${id}`),
+    document.getElementById(`checkBuff3Box-${id}`),
+  ];
 
-  const colorBuffInp2 = document.getElementById(`colorBuffInput2-${id}`);
-  const transparencyBuffInp2 = document.getElementById(
-      `transparencyBuffInput2-${id}`);
+  const colorBuffInps = [
+    document.getElementById(`colorBuffInput1-${id}`),
+    document.getElementById(`colorBuffInput2-${id}`),
+    document.getElementById(`colorBuffInput3-${id}`),
+  ];
 
-  const colorBuffInp3 = document.getElementById(`colorBuffInput3-${id}`);
-  const transparencyBuffInp3 = document.getElementById(
-      `transparencyBuffInput3-${id}`);
+  const transparencyBuffInps = [
+    document.getElementById(`transparencyBuffInput1-${id}`),
+    document.getElementById(`transparencyBuffInput2-${id}`),
+    document.getElementById(`transparencyBuffInput3-${id}`),
+  ];
 
+  for (let i = 0; i < checkBuffBoxes.length; ++i) {
+    checkBuffBoxes.at(i).onchange = () => {
+      viewer.dataSources.getByName(bufferNames.at(i)).forEach(e => {
+        e.show = checkBuffBoxes.at(i).checked;
+      });
+    };
+  }
   id++;
 }
 
