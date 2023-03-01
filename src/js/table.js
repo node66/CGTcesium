@@ -12,8 +12,9 @@ export function addRow(filename) {
   div.id = `div-${id}`;
   div.innerHTML = `<div class="card" id="card${id}">
             <div class="card-header">
-                <input checked type="checkbox" id="check${id}" value="">
+                <input checked type="checkbox" id="check${id}" value="" name="mainCheckBox">
                 <label for="check${id}">${filename}</label>
+                <label for="check${id}" hidden>${id}</label>
             </div>
                 <ul id="list${id}" class="list-group list-group-flush">
                 </ul>
@@ -55,7 +56,7 @@ export function addRow(filename) {
               <ul id="innerList${id}" class="list-group list-group-flush">
                   <li class="list-group-item">
                       <input id="bufferCheck${id}" type="checkbox" value="">
-                      <label for="">3D buffer</label>
+                      <label for="bufferCheck${id}">3D buffer</label>
                   </li>
                   <li class="list-group-item">
                       <table class="table">
@@ -307,5 +308,19 @@ export function addRow(filename) {
 
 const deleteItems = document.getElementById('deleteItems');
 deleteItems.onclick = () => {
+  let checkBoxesToDel = document.querySelectorAll('input[name=mainCheckBox]:checked');
+  checkBoxesToDel.forEach(e => {
+    const filename = e.labels[0].innerText;
+    const id = e.labels[1].innerText;
+    const [data] = viewer.dataSources.getByName(filename);
+    const [dataBuff1] = viewer.dataSources.getByName('firstBufferData' + id);
+    const [dataBuff2] = viewer.dataSources.getByName('secondBufferData' + id);
+    const [dataBuff3] = viewer.dataSources.getByName('thirdBufferData' + id);
 
+    viewer.dataSources.remove(data);
+    viewer.dataSources.remove(dataBuff1);
+    viewer.dataSources.remove(dataBuff2);
+    viewer.dataSources.remove(dataBuff3);
+    e.parentElement.parentElement.parentElement.remove();
+  });
 };
