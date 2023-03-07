@@ -1,17 +1,15 @@
 import 'bootstrap';
 import * as Cesium from 'cesium';
-import {Viewer} from 'cesium';
 import 'cesium/Build/Cesium/Widgets/widgets.css';
 import '../src/css/main.css';
-import {addRow} from './js/table';
+import {addRow} from './js/table.js';
 
-export const viewer = new Viewer('cesiumContainer');
-export const scene = viewer.scene;
-
+export const viewer = new Cesium.Viewer('cesiumContainer');
 
 const strToFloat = (str) => {
   return parseFloat(str.replace(',', '.'));
 };
+
 
 const fileInput = document.getElementById('geojson-file-upload');
 fileInput.onchange = () => {

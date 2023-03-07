@@ -1,33 +1,39 @@
-import {viewer} from '../index';
-import * as Cesium from 'cesium';
+import {viewer} from "../index.js";
+import * as Cesium from "cesium";
 
 let id = 0;
 export {
   id,
 };
 
-export function addRow(filename) {
+export function addHeader(filename, Obj = undefined){
   const headerCart = document.getElementById('sideBar');
   const div = document.createElement('div');
-  div.id = `div-${id}`;
+  div.id = Obj?.id ?? `div-${id}`;
+  const fname = Obj?.filename ?? filename;
+
   div.innerHTML = `<div class="card" id="card${id}">
             <div class="card-header">
                 <input checked type="checkbox" id="check${id}" value="" name="mainCheckBox">
-                <label for="check${id}">${filename}</label>
+                <label for="check${id}">${fname} </label>
                 <label for="check${id}" hidden>${id}</label>
             </div>
                 <ul id="list${id}" class="list-group list-group-flush">
                 </ul>
        </div>`;
 
-  headerCart.prepend(div);
+  document.getElementsByName("mainCheckBox").checked = Obj?.headCheck ?? true;
 
+  headerCart.prepend(div);
+}
+
+export  function addBody(Obj = undefined) {
   const bodyCard = document.getElementById(`list${id}`);
 
   bodyCard.innerHTML = `
       <li class="list-group-item">
           <input id="sizeInput${id}" type="number" min="0" required value="10">
-          <label for="size${id}">Size</label>
+          <label for="sizeInput${id}">Size</label>
       </li>
       <li class="list-group-item">
           <input class="form-check-input" id="connectPoints${id}"
@@ -122,6 +128,22 @@ export function addRow(filename) {
               </ul>
           </div>
       </li>`;
+
+
+  document.getElementById(`sizeInput${id}`)
+      .value = Obj?.settings.size ?? 10;
+
+  document.getElementById(`connectPoints${id}`)
+      .checked = Obj?.settings?.size ?? false;
+
+  document.getElementById(`colorInput${id}`)
+      .value = Obj?.settings?.color ?? "#FFFFFF";
+}
+
+export function addRow(filename) {
+
+  addHeader(filename);
+  addBody()
 
   const sizeInp = document.getElementById(`sizeInput${id}`);
   sizeInp.onchange = sizeInp.onclick = sizeAndColorChange;
@@ -304,23 +326,60 @@ export function addRow(filename) {
     };
   }
   id++;
+
+
+  const storageData = {
+    id: `div-${id}`,
+    filename: filename,
+    div: document.createElement('div'),
+    headCheck: checkBox.checked,
+    settings: {
+      size: sizeInp.value,
+      connectPoints: polyCheck.checked,
+      color: colorInp.value,
+      image: path,
+      buff3d: {
+        checkBox: checkBuffBox.checked,
+        size: {
+          firstSize: checkBuffBoxes[0].checked,
+          secondSize: checkBuffBoxes[1].checked,
+          thirdSize: checkBuffBoxes[2].checked,
+        },
+        color: {
+          firstColor: colorBuffInps[0].value,
+          secondColor: colorBuffInps[1].value,
+          thirdColor: colorBuffInps[2].value,
+        },
+        transp: {
+          firstTransp: transparencyBuffInps[0].value,
+          secondTransp: transparencyBuffInps[1].value,
+          thirdTransp: transparencyBuffInps[2].value,
+        },
+      },
+    },
+  };
+  localStorage.setItem(filename, JSON.stringify(storageData));
 }
 
 const deleteItems = document.getElementById('deleteItems');
 deleteItems.onclick = () => {
-  let checkBoxesToDel = document.querySelectorAll('input[name=mainCheckBox]:checked');
+  let checkBoxesToDel = document.querySelectorAll('input[name=mainCheckBox]');
   checkBoxesToDel.forEach(e => {
-    const filename = e.labels[0].innerText;
-    const id = e.labels[1].innerText;
-    const [data] = viewer.dataSources.getByName(filename);
-    const [dataBuff1] = viewer.dataSources.getByName('firstBufferData' + id);
-    const [dataBuff2] = viewer.dataSources.getByName('secondBufferData' + id);
-    const [dataBuff3] = viewer.dataSources.getByName('thirdBufferData' + id);
+    if (e.checked) {
+      const filename = e.labels[0].innerText;
+      const id = e.labels[1].innerText;
+      const [data] = viewer.dataSources.getByName(filename);
+      const [dataBuff1] = viewer.dataSources.getByName('firstBufferData' + id);
+      const [dataBuff2] = viewer.dataSources.getByName('secondBufferData' + id);
+      const [dataBuff3] = viewer.dataSources.getByName('thirdBufferData' + id);
 
-    viewer.dataSources.remove(data);
-    viewer.dataSources.remove(dataBuff1);
-    viewer.dataSources.remove(dataBuff2);
-    viewer.dataSources.remove(dataBuff3);
-    e.parentElement.parentElement.parentElement.remove();
+      localStorage.removeItem(filename);
+
+      viewer.dataSources.remove(data);
+      viewer.dataSources.remove(dataBuff1);
+      viewer.dataSources.remove(dataBuff2);
+      viewer.dataSources.remove(dataBuff3);
+      e.parentElement.parentElement.parentElement.remove();
+    }
   });
 };
